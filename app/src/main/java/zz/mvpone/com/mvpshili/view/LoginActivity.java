@@ -1,6 +1,9 @@
 package zz.mvpone.com.mvpshili.view;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,8 +51,15 @@ public class LoginActivity extends BaseActivity implements LoginInterface.View {
 
     }
 
+
     @Override
     public void setDate(PasswordBean passwordBean) {
         Log.d("lidh","passwordBean = "+passwordBean.getData());
+        if(!"".equals(passwordBean.getData())){
+            Log.d("ceshi",".......................");
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("http://www.baidu.com"));
+            startActivity(intent);
+        }
     }
 }

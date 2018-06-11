@@ -20,7 +20,7 @@ public class LoginModler implements LoginModlerImpl {
 
 
     @Override
-    public void getDates(String account, String password, Getpass getpass) {
+    public void getDates(String account, String password, final Getpass getpass) {
         Rx2AndroidNetworking.post(HttpNtlis.SigninPas)
                 .addBodyParameter("phone", account)
                 .addBodyParameter("passWord", password)
@@ -38,7 +38,7 @@ public class LoginModler implements LoginModlerImpl {
                     @Override
                     public DataBean apply(PasswordBean passwordBean) throws Exception {
                         Log.d("打印", passwordBean.toString());
-
+                        getpass.getpassword(passwordBean);
                         return passwordBean.getData();
                     }
                 })

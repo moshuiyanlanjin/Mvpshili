@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements ShowInterface.vie
             public void onclic(String s) {
                 Log.d("11",s);
                 ToastUtil.showToast(App.appcontext,"请欣赏"+s);
-                if(s.equals("逆流成河")){
+                if(s.equals("MVP")){
                     Intent intent = new Intent(MainActivity.this,LoginActivity.class);
                     startActivity(intent);
                 }

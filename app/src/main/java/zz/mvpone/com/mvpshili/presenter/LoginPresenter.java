@@ -25,6 +25,7 @@ public class LoginPresenter implements LoginInterface.Presenter{
          modler.getDates(account, password, new LoginModlerImpl.Getpass() {
              @Override
              public void getpassword(PasswordBean passwordBean) {
+                 Log.d("ceshi",".......................1");
                  view.setDate(passwordBean);
              }
          });
